@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbCVreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kullaniciadi" Type="varchar" MaxLength="20" />
+          <Property Name="Sifre" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TblAdres">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Adres" Type="varchar" MaxLength="50" />
+          <Property Name="Konum" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblCalismalarim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adres" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblHakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Bilgiler" Type="varchar" MaxLength="500" />
+          <Property Name="Egitim" Type="varchar" MaxLength="500" />
+          <Property Name="Isdeneyimleri" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TblIletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adsoyad" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Mesaj" Type="varchar" MaxLength="500" />
+          <Property Name="Konu" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblYeteneklerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Yetenekler" Type="varchar" MaxLength="50" />
+          <Property Name="Derece" Type="int" />
+        </EntityType>
+        <EntityContainer Name="dbCVreModelStoreContainer">
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdres" EntityType="Self.TblAdres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCalismalarim" EntityType="Self.TblCalismalarim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbCVreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblAdres">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Konum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblCalismalarim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblHakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bilgiler" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Egitim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Isdeneyimleri" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblIletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mesaj" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblYeteneklerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yetenekler" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Derece" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="dbCVreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblAdres" EntityType="Self.TblAdres" />
+          <EntitySet Name="TblCalismalarim" EntityType="Self.TblCalismalarim" />
+          <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" />
+          <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" />
+          <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" />
+          <EntitySet Name="TblAdmin" EntityType="dbCVreModel.TblAdmin" />
+        </EntityContainer>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kullaniciadi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbCVreModelStoreContainer" CdmEntityContainer="dbCVreEntities">
+          <EntitySetMapping Name="TblAdres">
+            <EntityTypeMapping TypeName="dbCVreModel.TblAdres">
+              <MappingFragment StoreEntitySet="TblAdres">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Konum" ColumnName="Konum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCalismalarim">
+            <EntityTypeMapping TypeName="dbCVreModel.TblCalismalarim">
+              <MappingFragment StoreEntitySet="TblCalismalarim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblHakkimda">
+            <EntityTypeMapping TypeName="dbCVreModel.TblHakkimda">
+              <MappingFragment StoreEntitySet="TblHakkimda">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Bilgiler" ColumnName="Bilgiler" />
+                <ScalarProperty Name="Egitim" ColumnName="Egitim" />
+                <ScalarProperty Name="Isdeneyimleri" ColumnName="Isdeneyimleri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblIletisim">
+            <EntityTypeMapping TypeName="dbCVreModel.TblIletisim">
+              <MappingFragment StoreEntitySet="TblIletisim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Adsoyad" ColumnName="Adsoyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblYeteneklerim">
+            <EntityTypeMapping TypeName="dbCVreModel.TblYeteneklerim">
+              <MappingFragment StoreEntitySet="TblYeteneklerim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Yetenekler" ColumnName="Yetenekler" />
+                <ScalarProperty Name="Derece" ColumnName="Derece" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="dbCVreModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Kullaniciadi" ColumnName="Kullaniciadi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
